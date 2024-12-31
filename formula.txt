@@ -1,0 +1,36 @@
+pgrm 3-
+
+IF [Genre] = [Select Genre] THEN [Global Sales] ELSE 0 END
+
+
+
+
+pgrm 9 -
+
+butterfly - TotalRevenue = sum(SalesTable[Revenue]) 
+Q6- AverageRevenuePerState = 
+AVERAGEX( VALUES(SalesTable[State]), 
+CALCULATE(SUM(SalesTable[Revenue])) 
+) 
+
+ProfitabilityStatus = 
+IF(SalesTable[AverageRevenuePerState] > 1000, 
+"Profitable", 
+"Non-Profitable" 
+) 
+
+
+
+
+pgrm 11-
+
+Employee Count = COUNT('HR'[EmployeeNumber])
+Attrition Count = COUNTROWS(FILTER('HR', 'HR'[Attrition]="Yes")) 
+Attrition Rate = DIVIDE([Attrition Count], [Employee Count], 0) * 100
+Active Employees = [Employee Count] - [Attrition Count]
+Average Age = AVERAGE(HR[Age])
+
+
+
+pgrm 12-
+Q4 - count showid = count(amazon_prime_titles[release_year]) 
